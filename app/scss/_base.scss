@@ -1,0 +1,58 @@
+body {
+    background-color: $bodyBg;
+    color: $mainTextColor;
+    overflow-x: hidden;
+    font-family: $mainFont;
+    font-size: clamp(14px, 2vw, 20px);
+
+    font-weight: 400;
+    line-height: 1;
+    cursor: url(../images/cursor.png) 40 40, auto;
+}
+// -------------------------------------------------------------------------------------------//
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.main {
+    flex: 1 0 auto;
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.573);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+// -------------------------------------------------------------------------------------------//
+.hero__bg {
+    position: absolute;
+    opacity: 0.2;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -70px;
+
+}
+.title {
+    color: $mainColor;
+    font-size: clamp(24px, 8vw, 64px);
+    line-height: 1.25; /* 125% */
+    letter-spacing: 5.12px;
+}

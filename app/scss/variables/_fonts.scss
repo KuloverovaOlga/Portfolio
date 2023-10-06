@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Jost";
+    font-weight: 400;
+    font-style: normal;
+    src: local("Jost Regular"),
+        local("Jost-Regular"),
+        url("./../fonts/Jost-Regular.woff2") format("woff2"),
+        url("./../fonts/Jost-Regular.woff") format("woff"),
+        url("./../fonts/Jost-Regular.eot") format("eot");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Jura";
+    font-weight: 400;
+    font-style: normal;
+    src: local("Jura Regular"),
+        local("Jura-Regular"),
+        url("./../fonts/Jura-Regular.woff2") format("woff2"),
+        url("./../fonts/Jura-Regular.woff") format("woff"),
+        url("./../fonts/Jura-Regular.eot") format("eot");
+    font-display: swap;
+}
