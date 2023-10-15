@@ -5,6 +5,7 @@
 //                     include _1170
 //                     include _1024
 //                     include _979
+//                     include _900
 //                     include _850
 //                     include _800
 //                     include _768
@@ -44,6 +45,11 @@
 
 @mixin _979 {
     @media (max-width: 979px) {
+        @content;
+    }
+}
+@mixin _900 {
+    @media (max-width: 900px) {
         @content;
     }
 }

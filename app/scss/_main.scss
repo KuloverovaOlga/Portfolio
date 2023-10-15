@@ -88,11 +88,11 @@
             height: 100vh;
             transform: translateY(-110%);
             transition: all 0.3s;
-    
+
             &.active {
-              transform: translateY(0);
+                transform: translateY(0);
             }
-          }
+        }
     }
     &__nav-list {
         display: flex;
@@ -104,7 +104,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 40px;
-          }
+        }
     }
     &__nav-item {
         position: relative;
@@ -152,60 +152,60 @@
     right: 15px;
     display: none;
     &__line {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      height: 5px;
-      background-color: $mainColor;
-      border: 1px solid $slideBg;
-      transition: all 0.3s;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 5px;
+        background-color: $mainColor;
+        border: 1px solid $slideBg;
+        transition: all 0.3s;
     }
     &::before,
     &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      width: 100%;
-      height: 5px;
-      background-color: $mainColor;
-      transition: all 0.3s;
-      border: 1px solid $slideBg;
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 5px;
+        background-color: $mainColor;
+        transition: all 0.3s;
+        border: 1px solid $slideBg;
     }
     &::before {
-      top: 0;
+        top: 0;
     }
     &::after {
-      bottom: 0;
+        bottom: 0;
     }
     &.active .burger__line {
-      opacity: 0;
+        opacity: 0;
     }
     &.active::before {
-      left: 0;
-      top: 50%;
-      transform: rotate(45deg);
-      width: 25px;
-      border: none;
+        left: 0;
+        top: 50%;
+        transform: rotate(45deg);
+        width: 25px;
+        border: none;
     }
     &.active::after {
-      left: 0;
-      width: 25px;
-      bottom: auto;
-      top: 50%;
-      transform: rotate(-45deg);
-      border: none;
+        left: 0;
+        width: 25px;
+        bottom: auto;
+        top: 50%;
+        transform: rotate(-45deg);
+        border: none;
     }
     @include _768 {
-      display: block;
+        display: block;
     }
-  }
+}
 
 .hero {
     &__inner {
         position: relative;
-        z-index: 2px;
+        z-index: 2;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -619,7 +619,7 @@
         &::after {
             content: '';
             position: absolute;
-            right: -200px;
+            right: -180px;
             bottom: 0px;
             z-index: -1;
             width: 152px;
@@ -817,7 +817,7 @@
         &-button-next {
             right: 0;
             &::after {
-                background: url(../icons/arrowNext.svg)  no-repeat;
+                background: url(../icons/arrowNext.svg) no-repeat;
                 right: 0;
             }
         }
