@@ -1,0 +1,366 @@
+.experience {
+  // .experience__inner
+
+  --paddingTextBoxDesktop: 15rem;
+  --pointLoation: -16rem;
+  --paddingDate: 6rem;
+
+  @include small-tablet {
+    --paddingDate: 22rem;
+
+    padding-top: 15rem;
+  }
+
+  &__inner {
+    @extend %flexColumn;
+    gap: 6.4rem;
+  }
+
+  // .experience__title
+
+  &__title {
+    align-self: flex-end;
+  }
+
+  // .experience__title-text
+
+  &__title-text {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 0.1rem;
+      left: 0;
+      content: attr(data-text);
+      display: block;
+      color: $green;
+      white-space: nowrap;
+      width: 14rem;
+      overflow: hidden;
+      @include small-tablet {
+        top: 0.2rem;
+      }
+    }
+  }
+
+  // .experience__list
+
+  &__list {
+    @extend %flexColumn;
+
+    @include small-tablet {
+      gap: 8rem;
+    }
+  }
+
+  // .experience__item
+
+  &__item {
+    @extend %flexCenter;
+    position: relative;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      & .experience__content-box {
+        align-items: flex-end;
+        text-align: right;
+        padding-left: 0rem;
+        padding-right: var(--paddingTextBoxDesktop);
+        @include small-tablet {
+          padding-right: 0;
+        }
+      }
+
+      & .experience__date {
+        padding: 0 var(--paddingDate) 0 0;
+        @include small-tablet {
+        }
+      }
+      & .experience__text-box {
+        padding: 0 var(--paddingDate);
+        @include small-tablet {
+          padding: 2rem 0 2rem 2rem;
+        }
+      }
+      & .experience__point-box {
+        right: var(--pointLoation);
+        left: auto;
+        @include small-tablet {
+          right: 0;
+        }
+      }
+
+      & .experience__point-border {
+        &::after {
+          right: auto;
+          left: 0;
+          transform: translate(-50%, -50%);
+        }
+      }
+      & .experience__arrow-box {
+        left: -2rem;
+        right: auto;
+      }
+      & .experience__text-item {
+        flex-direction: row-reverse;
+      }
+
+      & .experience__btn {
+        // align-self: flex-start;
+        right: auto;
+        left: 15rem;
+      }
+
+      & .experience__title-box {
+        @include small-tablet {
+          padding: 0 var(--paddingDate) 0 0;
+        }
+      }
+
+      & .experience__line-box {
+        @include small-tablet {
+          right: var(--paddingDate);
+          left: auto;
+        }
+      }
+
+
+      @include small-tablet {
+        flex-direction: column;
+        gap: 4rem;
+      }
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  // .experience__content-wrapper
+
+  &__content-wrapper {
+    width: 50%;
+    flex-shrink: 0;
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  // .experience__content-box
+
+  &__content-box {
+    @extend %flexColumn;
+    gap: 2rem;
+    padding-left: var(--paddingTextBoxDesktop);
+    padding-right: 0;
+    @include small-tablet {
+      padding-left: 0;
+    }
+  }
+
+  // .experience__date
+
+  &__date {
+    padding: 0 0 0 var(--paddingDate);
+    @include small-tablet {
+    }
+  }
+
+  // .experience__text-box
+
+  &__text-box {
+    @extend %flexColumn;
+    gap: 2rem;
+    position: relative;
+    padding: 0 var(--paddingDate);
+    width: 100%;
+    @include small-tablet {
+      padding: 2rem 2rem 2rem 0;
+    }
+  }
+
+  // .experience__point-box
+
+  &__point-box {
+    @extend %flexCenter;
+    position: absolute;
+    left: var(--pointLoation);
+    right: auto;
+    top: 0;
+    transform: translateY(-50%);
+
+    @include small-tablet {
+      left: 0;
+      width: 19rem;
+      height: 19rem;
+    }
+  }
+
+  &__point-border {
+    position: absolute;
+    border-radius: 50%;
+    @extend %flexCenter;
+    width: 15rem;
+    height: 15rem;
+    border: 0.4rem solid $black;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+      background-color: $bg;
+      width: 1.5rem;
+      height: 2rem;
+    }
+    @include small-tablet {
+      width: 19rem;
+      height: 19rem;
+    }
+  }
+
+  // .experience__point
+
+  &__point {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background-color: $green;
+    @include small-tablet {
+      width: 16rem;
+      height: 16rem;
+    }
+  }
+
+  // .experience__line
+
+  &__line-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0.4rem;
+    overflow: hidden;
+    @include small-tablet {
+      left: var(--paddingDate);
+      width: calc(100% - var(--paddingDate));
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    @include small-tablet {
+    }
+  }
+
+  // .experience__arrow
+
+  &__arrow-box {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: -2rem;
+    width: 4rem;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__arrow {
+    width: 0.4rem;
+    height: calc(100% - 1rem);
+    background-color: $black;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 1.87rem;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      border: 2rem solid transparent;
+      border-top: 2rem solid $black;
+    }
+  }
+
+  // .experience__title-box
+
+  &__title-box {
+    @extend %flexColumn;
+    width: 100%;
+    @include small-tablet {
+      padding: 0 0 0 var(--paddingDate);
+      margin-top: -2.5rem;
+    }
+  }
+
+  // .experience__company
+
+  &__company {
+    @include small-tablet {
+      font-size: 7rem;
+    }
+  }
+
+  // .experience__position
+
+  &__position {
+    margin-top: -0.6rem;
+    @include small-tablet {
+      margin-top: 0;
+    }
+  }
+
+  // .experience__text-list
+
+  &__text-list {
+    @extend %flexColumn;
+    gap: 1rem;
+    @include small-tablet {
+      gap: 2rem;
+    }
+  }
+
+  // .experience__text-item
+
+  &__text-item {
+    display: inline-flex;
+    gap: 1rem;
+    &::before {
+      content: '•';
+      color: $green;
+    }
+  }
+
+  // .experience__img-box
+
+  &__img-box {
+    flex-grow: 1;
+    position: relative;
+    @extend %flexCenter;
+    flex-direction: column;
+    @include small-tablet {
+      display: none;
+    }
+    & img {
+      position: absolute;
+      object-fit: cover;
+      width: 47.7rem;
+      height: 47.7rem;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    right: 15rem;
+    top: 50%;
+    @include small-tablet {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+}

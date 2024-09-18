@@ -1,0 +1,201 @@
+.button {
+  @extend %flexCenter;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  gap: 1.6rem;
+  border-radius: 10rem;
+  width: fit-content;
+  padding: 1.6rem 4.5rem;
+  box-shadow: 0 0 1.5rem 0 rgba(120, 123, 131, 0.5);
+  @include small-tablet {
+    padding: 2rem 8rem;
+  }
+  &__text {
+    color: $white;
+    font-family: 'Gilroy';
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: normal;
+    transition: color 0.5s ease;
+    @include small-tablet {
+      font-size: 3rem;
+    }
+  }
+
+  &__svg-box {
+    width: 1.6rem;
+    height: 2rem;
+    transition: transform 0.5s;
+    @include small-tablet {
+      width: 2.1rem;
+      height: 2.5rem;
+    }
+    flex-shrink: 0;
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      & path {
+        stroke: $white;
+        transition: stroke 0.5s ease;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    background-color: $darkGreen;
+    transition: transform 0.5s ease;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $green;
+    border-radius: 10rem;
+  }
+
+
+  &:hover {
+    &.button--up{
+      & .button__svg-box {
+        transform: translateY(-0.3rem);
+      }
+    }
+    & .button__svg-box {
+      transform: translateY(0.3rem);
+    }
+
+    & .button__text {
+      color: $black;
+    }
+    & .button__svg-box {
+      & svg path {
+        stroke: $black;
+      }
+    }
+
+    &:after {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.swiper-btn {
+  width: 5.4rem !important;
+  height: 5.4rem !important;
+  margin: 0 !important;
+  border-radius: 50%;
+  background-color: rgba(231, 231, 231, 0.7);
+  // border: 0.1rem solid $darkGreen;
+  backdrop-filter: blur(58px);
+  -webkit-backdrop-filter: blur(58px);
+  box-shadow: 0 1.2rem 2rem 0 $darkGreen;
+  position: static;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  @include small-tablet {
+    width: 8rem !important;
+    height: 8rem !important;
+  }
+  &:after {
+    content: '' !important;
+  }
+  &__svg-box {
+    width: 2.2rem;
+    height: 2.2rem;
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+.button-shadow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 1.6rem 4.5rem;
+  border-radius: 10rem;
+  position: relative;
+  box-shadow: 0 0 0 0 #1d1e1f;
+  width: fit-content;
+  transition: box-shadow 0.3s ease;
+
+  @include small-tablet {
+    padding: 2rem 8rem;
+  }
+
+  background-color: $green;
+  color: $white;
+  & .button-shadow-svg-box {
+    & svg path {
+      stroke: $white;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0.2rem 0.4rem 0 0 #1d1e1f;
+  }
+
+  & .button-shadow__text {
+    color: $darkGreen;
+    font-family: 'Gilroy';
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: normal;
+    transition: color 0.5s ease;
+    @include small-tablet {
+      font-size: 3rem;
+    }
+  }
+  & .button-shadow__svg-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+.link {
+  @extend %flexCenter;
+  width: 100%;
+  border-radius: 100%;
+  background-color: $linkBg;
+  border: 0.2rem solid #c8c8c8;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  padding: 2rem 4.2rem;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(0.9);
+  }
+}

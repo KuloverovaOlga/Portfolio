@@ -1,0 +1,131 @@
+
+
+
+.fancybox {
+    &__backdrop {
+      background-color: rgba($color: $gray, $alpha: 0.5);
+  
+      backdrop-filter: blur(52px);
+      -webkit-backdrop-filter: blur(52px);
+    }
+  
+    &__toolbar__column {
+      .f-button {
+        position: absolute;
+        right: 12.7rem;
+        top: 4.4rem;
+        width: 3.2rem;
+        height: 3.2rem;
+        color: $black;
+        background: transparent;
+  
+        &:hover {
+          background: transparent;
+          color: $black;
+        }
+  
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+
+        @include small-tablet {
+          right: 2.7rem;
+        }
+      }
+
+  
+    }
+  
+    &__nav {
+      .f-button {
+        &.is-next,
+        &.is-prev {
+          color: $black;
+          box-shadow: none;
+          width: 8rem;
+          height: 8rem;
+          background: $white;
+          border-radius: 1.2rem;
+  
+          &::before {
+            display: none;
+          }
+  
+          svg {
+            width: 4rem!important;;
+            // width: auto;
+            // height: auto;
+            height: 0.8rem!important;
+            stroke-width: 1px;
+            stroke: none;
+          }
+        }
+  
+        &.is-next {
+          --f-button-next-pos: 12rem;
+        }
+  
+        &.is-prev {
+          --f-button-prev-pos: 12rem;
+        }
+      }
+    }
+  }
+  
+  .has-html5video .fancybox__content {
+    width: 139.4rem !important;
+    height: 75.7rem !important;
+    & > .f-button.is-close-btn {
+      --f-button-color: #000;
+      --f-button-svg-width: 3.2rem;
+      --f-button-svg-height: 3.2rem;
+      --f-button-outline-color: transparent;
+    }
+    @include small-tablet {
+      width: 67rem !important;
+      height: 49.4rem !important;
+    }
+  }
+  
+  .fancybox__html5video {
+    object-fit: cover;
+  }
+  
+  .f-button.is-close-btn {
+    & svg {
+      fill: $black !important;
+    }
+  }
+  
+  @media (max-width: 48em) {
+    .fancybox {
+      &__nav {
+        .f-button {
+          &.is-next,
+          &.is-prev {
+            width: 10.4rem;
+            height: 10.4rem;
+  
+            svg {
+              width: 5.2rem;
+              stroke-width: 1px;
+            }
+          }
+  
+          &.is-next {
+            --f-button-next-pos: 1rem;
+          }
+  
+          &.is-prev {
+            --f-button-prev-pos: 1rem;
+          }
+        }
+      }
+    }
+  
+    .is-horizontal .fancybox__nav .f-button.is-next,
+    .is-horizontal .fancybox__nav .f-button.is-prev {
+      top: calc(100% - 20rem);
+    }
+  }

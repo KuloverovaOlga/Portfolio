@@ -1,0 +1,126 @@
+.tl1 {
+  font-family: 'Philosopher';
+  font-weight: 400;
+  font-size: 8rem;
+  line-height: 110%;
+  text-transform: uppercase;
+  @include small-tablet {
+    // font-size: 7.8rem;
+  }
+}
+
+// --------------------------------------------------------------------------
+.txt_cur {
+  font-family: 'Hello_January_script';
+  font-weight: 400;
+  font-size: 7rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 8rem;
+  }
+  &-min {
+    font-size: 4rem;
+    color: $green;
+  }
+  &-big {
+    font-size: 7.4rem;
+    color: $green;
+  }
+}
+
+.txtNum {
+  font-family: 'Philosopher';
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 4rem;
+  }
+}
+.txtLink {
+  font-family: 'Gilroy';
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 110%;
+  color: $darkGreen;
+  @include small-tablet {
+    font-size: 2.8rem;
+  }
+}
+
+.txt40 {
+  font-family: 'Gilroy';
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 3.4rem;
+  }
+}
+
+.txt32 {
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 4rem;
+  }
+}
+.txt28 {
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 3.4rem;
+  }
+}
+
+.txt24 {
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 3.2rem;
+  }
+}
+
+.txt22 {
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 110%;
+  @include small-tablet {
+    font-size: 3.6rem;
+  }
+  &-caps {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+.txt20 {
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 110%;
+  &_semibold {
+    font-weight: 600;
+  }
+  @include small-tablet {
+    font-size: 2.8rem;
+  }
+}
+.txt16 {
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 110%;
+  &--green {
+    color: $green;
+  }
+  @include small-tablet {
+  }
+}

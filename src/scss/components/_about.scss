@@ -1,0 +1,340 @@
+.about {
+  // .about__inner
+
+  @include small-tablet {
+    padding-top: 15rem;
+  }
+  &__inner {
+    @extend %flexColumn;
+    position: relative;
+    gap: 6.4rem;
+  }
+
+  // .banner__title
+
+  &__title {
+    align-self: center;
+  }
+
+  // .banner__title-text
+
+  &__title-text {
+    position: relative;
+    display: block;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: attr(data-text);
+      display: block;
+      color: $green;
+      white-space: nowrap;
+      width: 13.5rem;
+      overflow: hidden;
+      @include small-tablet {
+      }
+    }
+  }
+
+  // .about__list-box
+
+  &__list-box {
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 6.4rem;
+    }
+  }
+
+  // .about__thumb-wrapper
+
+  &__thumb-wrapper {
+    @extend %flexCenter;
+    justify-content: flex-start;
+    @include small-tablet {
+      padding: 0 3.2rem;
+      flex-direction: column-reverse;
+      width: 100%;
+      gap: 5rem;
+    }
+  }
+
+  // .about__thumb-box
+
+  &__thumb-box {
+    @extend %flexColumn;
+    gap: 8rem;
+    position: relative;
+    width: 107.6rem;
+    &::before {
+      content: '';
+      position: absolute;
+      right: -7.3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 17rem;
+      height: 63rem;
+      background: url(./assets/images/founder-tabs-bg.svg) no-repeat top / cover;
+
+      @include small-tablet {
+        left: -3.2rem;
+        right: -3.2rem;
+        top: 1.4rem;
+        width: 71rem;
+        height: 19rem;
+        background: url(./assets/images/main-banner-tabs-bg.svg) no-repeat top/cover;
+      }
+    }
+    @include small-tablet {
+      flex-direction: row;
+      gap: 12rem;
+      margin-top: -4.6rem;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  // .about__thumb
+
+  &__thumb {
+    @extend %flexCenterEnd;
+    gap: 3.6rem;
+    position: relative;
+    z-index: 5;
+    @include small-tablet {
+      align-items: flex-start;
+    }
+    &:nth-child(2) {
+      margin-right: 6rem;
+      @include small-tablet {
+        margin-right: 0;
+        margin-top: 6rem;
+      }
+    }
+    &.isActive {
+      & .about__thumb-text {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      & .about__thumb-num {
+        background-color: $darkGreen;
+        color: $bg;
+      }
+    }
+  }
+
+  // .about__thumb-text
+
+  &__thumb-text {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform-origin: right;
+    width: 78.5rem;
+    text-align: right;
+    opacity: 0.6;
+    span {
+      color: $darkGreen;
+    }
+  }
+
+  // .about__thumb-num
+
+  &__thumb-num {
+    @extend %flexCenter;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: $light-gray;
+    transition: color 0.5s ease, background-color 0.5s ease;
+    box-shadow: 0 0 2rem 0 rgba(120, 123, 131, 0.5);
+    cursor: pointer;
+    @include small-tablet {
+      width: 9.6rem;
+      height: 9.6rem;
+    }
+  }
+
+  // .about__thumb-img-box
+
+  &__thumb-img-box {
+    box-shadow: 1rem 1rem 2rem 0 $gray;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 59rem;
+    height: 59rem;
+    flex-shrink: 0;
+    &:hover {
+      & .about__thumb-img-wrapper {
+        transform: scale(1.1);
+      }
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include small-tablet {
+      width: 53rem;
+      height: 53rem;
+    }
+  }
+
+  &__thumb-img-wrapper {
+    transition: transform 0.5s ease-in-out;
+    clip-path: circle(50% at 50% 50%); /* Ограничиваем область до круга */
+    background-color: $green;
+  }
+
+  // .about__swiper
+
+  &__swiper {
+    position: absolute !important;
+    z-index: -20;
+    // opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    @include small-tablet {
+      position: relative !important;
+      z-index: 1;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // .about__swiper-wrapper
+
+  &__swiper-wrapper {
+    align-items: center;
+  }
+
+  // .about__swiper-slide
+
+  &__swiper-slide {
+  }
+
+  // .about__swiper-slide-inner
+
+  &__swiper-slide-inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  // .about__swiper-slide-text
+
+  &__swiper-slide-text {
+    width: 100%;
+    padding: 0 3.2rem;
+    color: $black;
+    text-align: center;
+  }
+
+  // .about__btn
+
+  &__btn {
+    position: absolute;
+    top: 21rem;
+    right: 7rem;
+    @include small-tablet {
+      align-self: center;
+      position: relative;
+      top: unset;
+      right: unset;
+    }
+  }
+
+  // .about__btn-text
+
+  &__btn-text {
+  }
+
+  // .about__btn-svg-box
+
+  &__btn-svg-box {
+  }
+
+  @keyframes squareIncrease {
+    0% {
+      scale: 0;
+      opacity: 0;
+    }
+    5% {
+        scale: 0;
+        opacity: 1;
+      
+    }
+    80% {
+      scale: 1;
+      opacity: 0;
+    }
+    100% {
+      scale: 1;
+      opacity: 0;
+    }
+  }
+
+  // .about__square
+
+  &__square {
+    position: absolute;
+    opacity: 0;
+    scale: 0;
+    &--big {
+      width: 18.2rem;
+      height: 18.2rem;
+      transform: rotate(30deg);
+      left: 2rem;
+      top: 7rem;
+
+      @include small-tablet {
+        width: 15rem;
+        height: 15rem;
+      }
+    }
+
+    &--medium {
+      width: 12.6rem;
+      height: 12.6rem;
+      transform: rotate(72deg);
+      left: 90rem;
+      bottom: -7rem;
+    
+      @include small-tablet {
+        width: 10rem;
+        height: 10rem;
+        left: 59rem;
+        bottom: auto;
+        top: 16rem;
+      }
+    }
+
+    &--little {
+      width: 6.2rem;
+      height: 6.2rem;
+      transform: rotate(22deg);
+      right: -2rem;
+      bottom: 19rem;
+ 
+      
+      @include small-tablet {
+        right: 20rem;
+        bottom: 39rem;
+      }
+    }
+    &.isIncrease {
+
+      &.about__square--big {
+        animation: squareIncrease 8s linear infinite ; 
+      }
+
+      // .about__square--medium
+
+      &.about__square--medium {
+        animation: squareIncrease 7s linear infinite ;
+      }
+
+      &.about__square--little {
+        animation: squareIncrease 6s linear infinite ;
+      }
+    }
+  }
+}

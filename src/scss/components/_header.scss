@@ -1,0 +1,144 @@
+.header {
+  // position: absolute;
+position: relative;
+z-index: 10;
+  // .header__inner
+  @include small-tablet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 500;
+    width: 100%;
+    max-width: 75rem;
+  }
+  &__inner {
+    @extend %flexCenterBetween;
+    padding: 1.2rem 0;
+  }
+
+  &__mob-wrapper {
+    @extend %flexCenterBetween;
+    @include small-tablet {
+      background-color: $bg25;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      width: 100%;
+      padding: 2rem;
+      border-radius: 2.4rem;
+      position: relative;
+      z-index: 5;
+    }
+  }
+  // .header__portfolio
+
+  &__portfolio {
+  }
+
+  // .header__nav
+
+  &__nav {
+    @include small-tablet {
+      position: fixed;
+      background-color: $bg;
+      width: 100%;
+      max-width: 75rem;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20rem 2rem 5rem;
+      transform: translateX(-100%);
+      transition: transform 0.5s ease-in-out;
+      &.isActive {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  // .header__nav-list
+
+  &__nav-list {
+    @extend %flexCenterBetween;
+    gap: 4.5rem;
+    @include small-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      overflow: auto;
+      max-height: calc(100vh - 35rem);
+    }
+  }
+  // .header__nav-item
+
+  &__nav-item {
+  }
+
+  // .header__nav-link-wrapper
+
+  &__nav-link-wrapper {
+    overflow: hidden;
+    &:hover .header__nav-link {
+      transform: translateY(100%);
+      @include small-tablet {
+      }
+    }
+  }
+
+  // .header__nav-link
+
+  &__nav-link {
+    padding: 0.5rem 0;
+    position: relative;
+    display: block;
+    transition: transform 0.5s ease;
+    &:before,
+    &:after {
+      position: absolute;
+    }
+    &:before {
+      content: '';
+      bottom: 100%;
+      display: block;
+      height: 0.3rem;
+      width: 100%;
+      background-color: $green;
+    }
+    &:after {
+      padding: 0.5rem 0;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      content: attr(data-hover);
+      white-space: nowrap;
+    }
+  }
+}
+
+.burger {
+  display: none;
+  @include small-tablet {
+    display: grid;
+    &.isActive {
+      & .burger__svg-box {
+        &.unActive {
+          transform: scale(0);
+        }
+        &.isActive {
+          transform: scale(1);
+        }
+      }
+    }
+    // .burger__svg-box
+    &__svg-box {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      transition: transform 0.5s ease;
+      &.unActive {
+        transform: scale(1);
+      }
+      &.isActive {
+        transform: scale(0);
+      }
+    }
+  }
+}

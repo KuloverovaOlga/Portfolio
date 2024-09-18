@@ -1,0 +1,18 @@
+.footer {
+  // .footer__inner
+
+  &__inner {
+    padding: 9rem 0 3rem;
+    @extend %flexCenterBetween;
+  }
+
+  // .footer__text
+
+  &__text {
+  }
+
+  // .footer__data
+
+  &__data {
+  }
+}

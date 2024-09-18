@@ -1,0 +1,346 @@
+.banner {
+  margin: -10rem 0 0 0;
+
+  @include small-tablet {
+    margin: 0; 
+  }
+  // .banner__inner
+  &__inner {
+    @extend %flexCenter;
+    position: relative;
+    gap: 23rem;
+    padding: 15rem 0 5rem ;
+    @include small-tablet {
+      margin: 0;
+      flex-direction: column;
+      gap: 8rem;
+      padding: 5rem 0 0;
+    }
+  }
+
+  // .banner__content-box
+  &__content-box {
+    @extend %flexColumn;
+    position: relative;
+    z-index: 5;
+    gap: 5rem;
+    @include small-tablet {
+      gap: 3.4rem;
+      width: 100%;
+    }
+  }
+
+  // .banner__title-box
+  &__title-box {
+    @extend %flexColumn;
+    gap: 3rem;
+    @include small-tablet {
+      gap: 4.2rem;
+    }
+  }
+
+  // .banner__desk-box
+
+  &__desk-box {
+    align-self: center;
+  }
+
+  // .banner__desk
+
+  &__desk {
+    &--bottom {
+      padding-left: 6rem;
+      margin-top: -3rem;
+      @include small-tablet {
+        padding-left: 4rem;
+        margin-top: -2rem;
+      }
+    }
+  }
+
+  // .banner__title
+
+  &__title {
+    @extend %flexColumn;
+  }
+
+  // .banner__text
+
+  &__title-text {
+    display: block;
+    position: relative;
+    color: $green;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: attr(data-text);
+      display: block;
+      color: $black;
+      white-space: nowrap;
+      width: 25.6rem;
+      overflow: hidden;
+      @include small-tablet {
+        top: 0rem;
+      }
+    }
+ 
+  }
+
+  // .banner__btn
+
+  &__btn {
+    align-self: flex-end;
+  }
+
+  // .banner__btn-text
+
+  &__btn-text {
+  }
+
+  // .banner__btn-svg-box
+
+  &__btn-svg-box {
+  }
+
+  // .banner__programmer-box
+
+  &__programmer-box {
+    @extend %flexColumn;
+    position: relative;
+    z-index: 5;
+    align-items: center;
+    width: 50.2rem;
+    position: relative;
+ 
+  }
+
+  // .banner__programmer-wrapper
+
+  &__programmer-wrapper {
+    width: 47.1rem;
+    height: 47.1rem;
+    margin-top: -33rem;
+    margin-left: -9rem;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    pointer-events: none;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // .banner__programmer-circle-box
+
+  &__programmer-circle-box {
+    @extend %flexCenter;
+    width: 44rem;
+    height: 44rem;
+  }
+
+  // .banner__programmer-circle
+
+  &__programmer-circle {
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  // .banner__programmer-circle--center
+
+  &__programmer-circle--center {
+    width: 25rem;
+    height: 25rem;
+    border: 0.3rem solid $green73;
+    box-shadow: 0 0 1rem 0rem $green25;
+  }
+
+  // .banner__programmer-circle--middle
+
+  &__programmer-circle--middle {
+    width: 33rem;
+    height: 33rem;
+    border: 0.3rem solid $darkGreen;
+    box-shadow: 0 0 1rem 0 $darkGreen50;
+  }
+
+  // .banner__programmer-circle--moving
+
+  &__programmer-circle--moving {
+    width: 44rem;
+    height: 44rem;
+    border: 0.3rem solid $green73;
+    box-shadow: 0 0 1.5rem 0rem $green50;
+    position: relative;
+    &.isBeging {
+      & .banner__programmer-skill-box {
+        transition: inset 0.6s;
+        transition-delay: calc(0.1s * var(--i));
+      }
+      & .banner__programmer-skill-box:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      & .banner__programmer-skill-box:nth-child(2) {
+        top: -6.5rem;
+        left: 17rem;
+      }
+
+      & .banner__programmer-skill-box:nth-child(3) {
+        top: 0;
+        right: 0;
+      }
+
+      & .banner__programmer-skill-box:nth-child(4) {
+        right: -6.5rem;
+        top: 17rem;
+      }
+
+      & .banner__programmer-skill-box:nth-child(5) {
+        bottom: 0;
+        right: 0;
+      }
+
+      & .banner__programmer-skill-box:nth-child(6) {
+        bottom: -6.5rem;
+        left: 17rem;
+      }
+
+      & .banner__programmer-skill-box:nth-child(7) {
+        bottom: 0;
+        left: 0;
+      }
+
+      & .banner__programmer-skill-box:nth-child(8) {
+        left: -6.5rem;
+        bottom: 17rem;
+      }
+    }
+    &.isRotate {
+      animation: rotate 60s linear infinite;
+
+      & .banner__programmer-skill-box {
+        transition: transform 0.3s;
+      }
+      & .banner__programmer-skill {
+        animation: rotateImg 60s linear infinite;
+      }
+    }
+  }
+
+  // .banner__programmer-skill-box
+
+  &__programmer-skill-box {
+    @extend %flexCenter;
+    border: 0.2rem solid $green;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 0 0 1.5rem 0 $darkGreen50;
+    background: #fff7f2;
+    position: absolute;
+    transition: transform 0.5s;
+
+    // transition: top 0.3s, left 0.3s, right 0.3s, bottom 0.3s;
+
+    &:nth-child(1) {
+      top: 16rem;
+      left: 16rem;
+    }
+
+    &:nth-child(2) {
+      top: 16rem;
+      left: 16rem;
+    }
+
+    &:nth-child(3) {
+      top: 16rem;
+      right: 16rem;
+    }
+
+    &:nth-child(4) {
+      right: 16rem;
+      top: 16rem;
+    }
+
+    &:nth-child(5) {
+      bottom: 16rem;
+      right: 16rem;
+    }
+
+    &:nth-child(6) {
+      bottom: 16rem;
+      left: 16rem;
+    }
+
+    &:nth-child(7) {
+      bottom: 16rem;
+      left: 16rem;
+    }
+
+    &:nth-child(8) {
+      left: 16rem;
+      bottom: 17rem;
+    }
+  }
+
+  // .banner__programmer-skill
+
+  &__programmer-skill {
+    width: 5rem;
+    height: 5rem;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      rotate: 1turn;
+    }
+  }
+
+  @keyframes rotateImg {
+    100% {
+      rotate: -1turn;
+    }
+  }
+
+  // .banner__svg
+
+  &__svg {
+    position: absolute;
+    &--left {
+      top: 32.4rem;
+      left: 15.5rem;
+      width: 19.2rem;
+      height: 13.8rem;
+      @include small-tablet {
+        top: 17.4rem;
+        left: 3.3rem;
+      
+      }
+    }
+    &--right {
+      bottom: 27rem;
+      right: 102rem;
+      width: 12.3rem;
+      height: 6.9rem;
+      @include small-tablet {
+        top: 32.7rem;
+        right: 11rem;
+        height: 6rem;
+      }
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+}
