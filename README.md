@@ -1,4 +1,4 @@
-<h1>Mental health</h1> 
+<h1>Kuloverova Olga Portfolio</h1> 
 <sub>Multi-page</sub>
 
 
@@ -15,7 +15,7 @@
 
 ---
 
-[Demo Link <br>![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)](https://kuloverovaolga.github.io/mentalHealth/dist/)
+[Demo Link <br>![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)](kuloverovaolga.github.io/Portfolio/dist/)
 
 
 <h2>📱 My contacts:</h2> 
