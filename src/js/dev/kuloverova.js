@@ -1148,21 +1148,21 @@ function works() {
     }
   });
 
-  const wwwSwiper = new Swiper('.works__www-swiper', {
-    slidesPerView: 1,
-    allowTouchMove: false,
-    effect: 'creative',
-    creativeEffect: {
-      prev: {
-        scale: 0,
-        translate: [0, 0, -200]
-      },
-      next: {
-        scale: 0,
-        translate: [0, 0, -200]
-      }
-    }
-  });
+  // const wwwSwiper = new Swiper('.works__www-swiper', {
+  //   slidesPerView: 1,
+  //   allowTouchMove: false,
+  //   effect: 'creative',
+  //   creativeEffect: {
+  //     prev: {
+  //       scale: 0,
+  //       translate: [0, 0, -200]
+  //     },
+  //     next: {
+  //       scale: 0,
+  //       translate: [0, 0, -200]
+  //     }
+  //   }
+  // });
 
   const gitSwiper = new Swiper('.works__git-swiper', {
     slidesPerView: 1,
@@ -1180,8 +1180,8 @@ function works() {
     }
   });
 
-  imgSwiper.controller.control = [titleSwiper, descSwiper, demoSwiper, wwwSwiper, gitSwiper];
-  descSwiper.controller.control = [titleSwiper, imgSwiper, demoSwiper, wwwSwiper, gitSwiper];
+  imgSwiper.controller.control = [titleSwiper, descSwiper, demoSwiper,  gitSwiper];
+  descSwiper.controller.control = [titleSwiper, imgSwiper, demoSwiper,  gitSwiper];
 }
 
 function fancy() {
